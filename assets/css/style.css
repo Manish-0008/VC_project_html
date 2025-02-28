@@ -5,13 +5,38 @@
     text-decoration: none;
 }
 
-html {
+html,
+body {
     overflow-x: hidden;
 }
 
 body {
     font-family: 'Poppins';
     color: #000 !important;
+}
+
+/* Custom Scrollbar CSS */
+
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,
+            left bottom,
+            left top,
+            color-stop(0.44, rgb(122, 153, 217)),
+            color-stop(0.72, rgb(73, 125, 189)),
+            color-stop(0.86, rgb(28, 58, 148)));
 }
 
 
@@ -521,6 +546,7 @@ body {
 .about-section {
     background-image: url(../images/about_bg.png);
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: top;
     margin-top: -100px;
     position: relative;
@@ -872,7 +898,7 @@ body {
 /* Responsive for Mobile (1 per row) */
 @media (max-width: 576px) {
     .gallery {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -932,16 +958,123 @@ body {
     margin-bottom: 15px;
 }
 
-.copyright{
+.copyright {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     font-family: 'poppins-light';
 }
 
-.copyright p,.copyright i{
+.copyright p,
+.copyright i {
     color: #ededed;
 }
-.copyright i{
+
+.copyright i {
     margin-right: 4px;
+}
+
+@media (max-width:800px) {
+    .about_pattern {
+        right: inherit;
+    }
+
+    .about-section {
+        background-size: inherit;
+        padding-top: 50%;
+
+    }
+
+    .about-content {
+        padding-bottom: 40px;
+    }
+
+    .attend-div h2 {
+        font-size: 38px;
+    }
+
+    .attend-section::before {
+        width: 100px;
+        height: 100px;
+    }
+
+    .d-flex.justify-content-center.flex-wrap {
+        justify-content: space-between !important;
+        padding: 12px 0;
+    }
+
+    .gallery a:last-child {
+        display: none;
+    }
+}
+
+@media (max-width:550px) {
+    .banner_inner_content {
+        max-width: 100%;
+    }
+
+    .leaf_pattern {
+        display: none;
+    }
+
+    .logo.intersec_logo a img {
+        width: 230px;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .button-container .btn {
+        width: 80%;
+        margin: auto;
+    }
+
+    section.advertiser-section {
+        margin-top: 100px;
+    }
+
+    .advertiser-section::before {
+        width: 140px;
+        height: 140px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .attend-div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .attend-div h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .attend-section {
+        margin-top: 100px;
+    }
+
+    .footer_detail {
+        width: 85%;
+    }
+
+    .about-section {
+        padding-top: 300px;
+    }
+
+    .about-section {
+        background-color: #eeca92;
+    }
+
+    .slick-prev {
+        left: -10px;
+    }
+
+    .allBtn {
+        font-size: 18px;
+    }
+    .gallery a:last-child{
+        display: block !important;
+    }
 }
